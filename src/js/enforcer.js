@@ -180,13 +180,17 @@
     var patternMismatch = function (field, settings) {
         // Check if there's a pattern to match
         var pattern = field.getAttribute('pattern') || settings.patterns[field.type];
-        if (!pattern) return false;
+        if (!pattern || field.value.length < 1) return false;
 
         // Validate the pattern
         return !(new RegExp(pattern).test(field.value));
     };
 
     var outOfRange = function (field) {
+
+        // Make sure field has value
+        if (field.value.length < 1) return false;
+
         // Check for range
         var max = field.getAttribute('max');
         var min = field.getAttribute('min');
@@ -199,6 +203,10 @@
     };
 
     var wrongLength = function (field) {
+
+        // Make sure field has value
+        if (field.value.length < 1) return false;
+
         // Check for min/max length
         var max = field.getAttribute('maxlength');
         var min = field.getAttribute('minlength');
@@ -403,6 +411,7 @@
             // Validate each field
             var errors = Array.prototype.filter.call(event.target.elements, function (field) {
                 var validate = publicAPIs.validate(field);
+                console.log('validate', field, validate);
                 return validate && !validate.valid;
             });
 
