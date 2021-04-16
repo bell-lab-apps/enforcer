@@ -413,13 +413,13 @@
             // Validate each field
             var errors = Array.prototype.filter.call(event.target.elements, function (field) {
                 var validate = publicAPIs.validate(field);
-                console.log('validate', field, validate);
                 return validate && !validate.valid;
             });
 
             // If there are errors, focus on the first one
             if (errors.length > 0) {
                 errors[0].focus();
+                emitEvent(event.target, 'enforcerFormInvalid', {errors: errors});
                 return;
             }
 

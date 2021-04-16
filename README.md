@@ -260,6 +260,7 @@ Enforcer emits five custom events:
 - `enforcerShowError` is emitted on a field when an error is displayed for it.
 - `enforcerRemoveError` is emitted on a field when an error is removed from it.
 - `enforcerFormValid` is emitted on a form is successfully validated.
+- `enforcerFormInvalid` is emitted on a form that fails validation.
 - `enforcerInitialized` is emitted when enforcer initializes.
 - `enforcerDestroy` is emitted when enforcer is destroyed.
 
@@ -279,9 +280,11 @@ document.addEventListener('enforcerFormValid', function (event) {
 }, false);
 ```
 
-On the `enforcerShowError` event, you can get the specific errors using the `event.detail` object.
+The `event.detail` object holds event-specific information:
 
-The `enforcerInitialized` and `enforcerDestroyed` events include the `settings` for the instantiation under `event.detail`.
+- On the `enforcerShowError` event, it has the specific errors for the field.
+- On the `enforcerInitialized` and `enforcerDestroyed` events , it contains the `settings` for the instantiation.
+- On the `enforcerFormInvalid` event, it includes all of the fields with errors under `event.detail`.
 
 ```js
 // Detect show error events
