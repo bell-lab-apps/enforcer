@@ -1,3 +1,4 @@
+/* jshint ignore:start */
 /*
  * classList.js: Cross-browser full element.classList implementation.
  * 1.1.20170427
@@ -238,3 +239,4 @@ if ('document' in self) {
     }());
 
 }
+/* jshint ignore:end */
