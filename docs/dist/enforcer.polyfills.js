@@ -1,5 +1,5 @@
 /*!
- * enforcer v1.0.3: A lightweight form validation library that augments native HTML5 form validation elements and attributes.
+ * enforcer v1.0.4: A lightweight form validation library that augments native HTML5 form validation elements and attributes.
  * (c) 2021 Warren Galyen
  * MIT License
  * http://github.com/bell-lab-apps/enforcer
@@ -370,7 +370,7 @@
 
         publicAPIs.validate = function (field, options) {
             // Don't validate submits, buttons, file and reset inputs, and disabled and readonly fields
-            if (field.disabled || field.readOnly || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
+            if (!field.value || field.disabled || field.readOnly || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
 
             // Local settings
             var _settings = extend(settings, options || {});
