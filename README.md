@@ -186,6 +186,8 @@ Enforcer captures four different types of field errors:
 
 The patterns and messages associated with these types of errors can be customized.
 
+You can see this feature in action with the *Confirm Password* field on [the demo page](http://bell-lab-apps.github.io/enforcer/).
+
 
 ## Options and Settings
 
