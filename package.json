@@ -1,6 +1,6 @@
 {
     "name": "enforcer",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "A lightweight form validation library that augments native HTML5 form validation elements and attributes.",
     "main": "./dist/enforcer.polyfills.min.js",
     "author": {

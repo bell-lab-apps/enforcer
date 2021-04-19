@@ -1,5 +1,5 @@
 /*!
- * enforcer v1.1.1: A lightweight form validation library that augments native HTML5 form validation elements and attributes.
+ * enforcer v1.2.0: A lightweight form validation library that augments native HTML5 form validation elements and attributes.
  * (c) 2021 Warren Galyen
  * MIT License
  * http://github.com/bell-lab-apps/enforcer
